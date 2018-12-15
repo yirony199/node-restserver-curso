@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 
-app.use(require("./router/usuarios"));
+app.use(require("./router/index"));
 
 mongoose.connect(process.env.urlDBN, (err, res  )=>{
   if(err) throw err;
