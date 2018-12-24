@@ -2,6 +2,8 @@ require('./config/config');
 
 const express = require('express');
 const mongoose = require('mongoose');
+
+const path = require("path");
  
 
 var bodyParser = require('body-parser');
@@ -17,6 +19,8 @@ app.use(bodyParser.urlencoded({
 // parse application/json
 app.use(bodyParser.json())
 
+//habilitar la carpeta public 
+app.use(express.static(path.resolve(__dirname  , '../public')));
 
 app.use(require("./router/index"));
 
